@@ -101,25 +101,46 @@ numArgs(1, 2, 3, 4, 5, 6);
 
 //7.) Define a function, as a function declaration, reverseStringthat takes a string, reverses the characters, and returns it. For example, reverseString('rockstar');would return the string "ratskcor".
 
-let newStr = " ";
+let emptyStr = " ";
 
 reverseString = (str) => {
   for(let i = str.length - 1; i >= 0; i--){
     newStr += str[i];
   }
-  return newStr;
+  return emptyStr;
 }
 
 // console.log(reverseString("coleman"));
 
 //8.) Define a function, as a function expression, longestStringInArraythat takes an array of strings as an argument and returns the length of the longest string.
 
-const longestStringInArray = () => {
-  
+const longestStringInArray = (strArray) => {
+  let longest = 0;
+  for(let i = 0; i < strArray.length; i++){
+    // console.log(strArray[i]);
+    if(strArray[i].length > longest){
+      longest = strArray[i].length;
+    }
+  }
+
+  return longest;
 }
+
+let result = longestStringInArray(["hi", "bye", "hello"]);
+// console.log(result);
 
 //9.) Define a function, as a function declaration, stringsLongerThanthat takes an array of strings and a number as arguments, and returns an array of the strings that are longer than the number passed in. For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3);would return ["hello", "morning"].
 
-stringsLongerThan = () => {
-
+stringsLongerThan = (strArray, num) => {
+  const emptyArray = []
+  for(let i = 0; i < strArray.length; i++){
+    // console.log(strArray[1]);
+    if(strArray[i].length > num){
+      emptyArray.push(strArray[i]);
+    }
+  }
+  return emptyArray;
 }
+
+let completed = stringsLongerThan(["say", "hello", "in"], 2)
+console.log(completed);
